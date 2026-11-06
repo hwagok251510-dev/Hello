@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d1c">
+<title>화곡중학교 | 한마음축제</title>
+<style>
+:root{--bg:#080d1c;--panel:#101a31;--panel2:#14213c;--line:#263653;--text:#eef4ff;--muted:#9aabc8;--cyan:#66e5ff;--violet:#a78bfa;--pink:#ff83bd;--green:#79e6bd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#192c55 0,transparent 38%),radial-gradient(ellipse at 0% 35%,#172044 0,transparent 32%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:#080d1cdb;backdrop-filter:blur(18px);border-bottom:1px solid #263653}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{font-weight:850;letter-spacing:.04em}.brand span{color:var(--cyan)}.navlinks{display:flex;gap:20px}.navlinks a{color:var(--muted);text-decoration:none;font-size:14px}.navlinks a:hover{color:white}
+.btn{border:1px solid var(--line);background:#172440;color:var(--text);padding:10px 15px;border-radius:12px;font-weight:700}.btn.primary{background:linear-gradient(110deg,#3bc8e9,#8c7cf7);color:#07101f;border:0}.btn.small{padding:7px 10px;font-size:13px}.btn.ghost{background:transparent}.hero{padding:76px 0 52px;position:relative;overflow:hidden}.eyebrow{color:var(--cyan);font-size:12px;letter-spacing:.2em;font-weight:800}.hero h1{font-size:clamp(40px,8vw,78px);line-height:1.02;letter-spacing:-.055em;margin:18px 0}.hero h1 em{font-style:normal;color:transparent;background:linear-gradient(90deg,var(--cyan),#b4a0ff,var(--pink));background-clip:text}.hero p{color:var(--muted);max-width:570px;line-height:1.8}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.orb{position:absolute;right:7%;top:65px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8af0ff88,#8874ff22 42%,transparent 70%);filter:blur(3px);pointer-events:none}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 46px}.stat,.card{background:linear-gradient(145deg,#14213bdd,#0e172bdd);border:1px solid var(--line);border-radius:18px}.stat{padding:17px 20px}.stat b{display:block;font-size:24px}.stat span{color:var(--muted);font-size:13px}
+section{padding:24px 0 48px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px}.section-head h2{font-size:27px;margin:0;letter-spacing:-.04em}.section-head p{margin:7px 0 0;color:var(--muted);font-size:14px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:18px}.tag{display:inline-flex;padding:5px 9px;border-radius:99px;background:#203454;color:var(--cyan);font-size:11px;font-weight:800}.card h3{margin:12px 0 7px}.card p{color:var(--muted);line-height:1.65;font-size:14px;margin:0}.meta{color:#8295b5;font-size:12px;margin-top:13px}.schedule{display:grid;gap:10px}.event{display:grid;grid-template-columns:110px 1fr auto;align-items:center;gap:16px;padding:16px 18px;background:#101a31;border:1px solid var(--line);border-radius:15px}.event time{color:var(--cyan);font-weight:800}.event p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.project{overflow:hidden}.project img,.project video{width:100%;max-height:220px;object-fit:cover;background:#080d1c}.project .inside{padding:17px}.project h3{margin:0 0 7px}.empty{border:1px dashed #425577;border-radius:16px;padding:25px;text-align:center;color:var(--muted);grid-column:1/-1}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:13px}.adminbar{display:none;position:sticky;top:70px;z-index:9;background:#14213cf2;border-bottom:1px solid var(--line);padding:10px 0}.adminbar.active{display:block}.adminbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.notice{color:var(--green);font-size:13px}
+.modal{position:fixed;inset:0;background:#030713c9;display:none;align-items:center;justify-content:center;padding:18px;z-index:30}.modal.open{display:flex}.dialog{width:min(620px,100%);max-height:90vh;overflow:auto;background:#111d35;border:1px solid #405477;border-radius:20px;padding:22px;box-shadow:0 20px 80px #0009}.dialog h2{margin:0 0 16px}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:13px;color:#bdcbe2}.field input,.field textarea,.field select{width:100%;border:1px solid #344765;background:#091326;color:white;border-radius:10px;padding:11px}.field textarea{min-height:95px;resize:vertical}.dialog-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.hint{font-size:12px;color:var(--muted);line-height:1.6}.filelabel{display:inline-block}.hidden{display:none!important}
+@media(max-width:760px){.navlinks{display:none}.hero{padding:55px 0 35px}.orb{right:-90px;top:50px}.stats{gap:8px}.stat{padding:13px}.stat b{font-size:20px}.cards{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}.event{grid-template-columns:78px 1fr}.event .event-actions{grid-column:2}.section-head{align-items:start;flex-direction:column}}
+@media(max-width:430px){.cards{grid-template-columns:1fr}.wrap{width:min(100% - 26px,1120px)}}
+.text-editing [contenteditable="true"]{outline:2px dashed var(--cyan);outline-offset:3px;border-radius:4px;cursor:text}.text-editing [contenteditable="true"]:focus{outline:2px solid var(--pink);background:#1b2b49}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><div class="brand">HWAGOK <span>한마음축제</span></div><nav class="navlinks"><a href="#clubs">동아리 활동</a><a href="#programs">작품 전시</a><a href="#schedule">축제 일정</a></nav><button class="btn small" id="adminBtn">관리자 편집</button></div></header>
+<div class="adminbar" id="adminbar"><div class="wrap"><span class="notice">● 편집 모드 — 각 항목의 수정·삭제 버튼과 일정 추가 버튼을 사용할 수 있습니다. 변경 내용은 이 브라우저에 자동 저장됩니다.</span><div><button class="btn small" id="gradioSettingsBtn">AI 프로그램 연결</button> <button class="btn small" id="textEditBtn">글자 직접 수정</button> <button class="btn small" id="exportBtn">백업 내보내기</button> <label class="btn small filelabel">백업 불러오기<input class="hidden" type="file" id="importFile" accept=".json"></label> <button class="btn small ghost" id="exitAdmin">편집 종료</button></div></div></div>
+<main class="wrap">
+<div class="hero"><div class="orb"></div><div class="eyebrow">HWAGOK MIDDLE SCHOOL · SCHOOL 한마음축제</div><h1>우리의 아이디어가<br><em>축제가 되는 순간.</em></h1><p>화곡중학교 동아리의 활동과 학생들이 직접 만든 작품을 만나보세요. 함께 만들고, 나누고, 즐기는 우리들의 축제입니다.</p><div class="hero-actions"><a class="btn primary" href="#clubs" style="text-decoration:none">동아리 둘러보기 ↗</a><a class="btn" href="#programs" style="text-decoration:none">작품 구경하기</a></div></div>
+<div class="stats"><div class="stat"><b id="clubCount">0</b><span>참여 동아리</span></div><div class="stat"><b id="projectCount">0</b><span>등록 작품</span></div><div class="stat"><b>HWAGOK</b><span>화곡 한마음축제</span></div></div>
+<section id="clubs"><div class="section-head"><div><div class="eyebrow">CLUB ACTIVITIES</div><h2>동아리 활동</h2><p>각 동아리가 준비한 활동과 축제 콘텐츠를 소개합니다.</p></div><button class="btn primary admin-only hidden" id="addClub">＋ 동아리 활동 추가</button></div><div class="cards" id="clubList"></div></section>
+<section id="programs"><div class="section-head"><div><div class="eyebrow">MADE BY STUDENTS</div><h2>프로그래밍 작품 전시</h2><p>팀별로 만든 프로그램을 올리고, 작품의 특징과 사용 방법을 소개해 보세요.</p></div><button class="btn primary admin-only hidden" id="addProject">＋ 작품 등록</button></div><div class="projects" id="projectList"></div></section>
+
+<section id="ai-demo">
+ <div class="section-head">
+  <div><div class="eyebrow">LIVE AI EXPERIENCE</div><h2>우리의 AI 프로그램 체험</h2><p>프로그래밍 동아리에서 만든 인공지능을 이 페이지 안에서 직접 체험해 보세요.</p></div>
+ </div>
+ <div class="card" style="padding:12px">
+  <div id="gradioPlaceholder" style="padding:28px 16px;text-align:center;color:var(--muted)">
+   <div style="font-size:34px;margin-bottom:10px">🤖</div>
+   <b style="color:var(--text)">AI 프로그램을 연결할 준비가 되었어요!</b>
+   <p style="margin:8px 0 0">관리자 편집 → AI 프로그램 연결에서 Gradio 주소를 입력하면 이곳에 바로 표시됩니다.</p>
+  </div>
+  <iframe id="gradioFrame" title="화곡중학교 AI 프로그램" style="display:none;width:100%;height:720px;border:0;border-radius:12px;background:white" loading="lazy" allow="clipboard-read; clipboard-write; microphone"></iframe>
+ </div>
+ <p class="hint" style="margin-top:9px">※ Gradio 서비스가 외부 사이트 안에서 표시되는 것을 허용해야 정상적으로 보입니다. 표시되지 않으면 해당 Gradio 배포의 임베드 설정을 확인해 주세요.</p>
+</section>
+
+<section id="schedule"><div class="section-head"><div><div class="eyebrow">한마음축제 GUIDE</div><h2>축제 일정</h2><p>축제 날짜와 공연·행사 일정을 확인하세요.</p></div><button class="btn admin-only hidden" id="editSchedule">＋ 일정 추가</button></div><div class="schedule" id="scheduleList"></div></section>
+</main>
+<footer><div class="wrap">© 화곡중학교 한마음축제 안내 페이지 · 학생들의 창작물과 활동을 소개합니다.<br><span class="hint">※ 학교 공식 홈페이지가 아닌 축제용 시안입니다. 실제 공개 전 담당 선생님의 확인을 받아 주세요.</span></div></footer>
+
+<div class="modal" id="gradioSettingsModal"><div class="dialog">
+ <h2>Gradio AI 프로그램 연결</h2>
+ <div class="field"><label for="gradioUrlInput">Gradio 주소</label><input id="gradioUrlInput" type="url" placeholder="https://내-gradio-주소.gradio.live"></div>
+ <p class="hint">공유 주소(https://...)를 입력하세요. 저장하면 링크 버튼이 아니라 이 페이지 안에 프로그램 화면이 표시됩니다. 주소를 비우고 저장하면 연결이 해제됩니다.</p>
+ <div class="dialog-actions"><button class="btn" id="cancelGradioSettings">취소</button><button class="btn" id="removeGradioSettings">연결 해제</button><button class="btn primary" id="saveGradioSettings">저장</button></div>
+</div></div>
+
+<div class="modal" id="loginModal"><div class="dialog"><h2>관리자 비밀번호</h2><div class="field"><label for="adminPassword">비밀번호를 입력하세요.</label><input id="adminPassword" type="password" inputmode="numeric" autocomplete="current-password" placeholder="비밀번호"></div><p class="hint">관리자 비밀번호를 입력하면 편집 기능을 사용할 수 있습니다.</p><div class="dialog-actions"><button class="btn" id="cancelLogin">취소</button><button class="btn primary" id="confirmLogin">확인</button></div></div></div>
+<div class="modal" id="modal"><div class="dialog"><h2 id="modalTitle">내용 편집</h2><div id="modalBody"></div><div class="dialog-actions"><button class="btn" id="cancelModal">취소</button><button class="btn primary" id="saveModal">저장</button></div></div></div>
+<script>
+const starter={clubs:[
+{id:1,name:"과학 동아리",category:"탐구 · 실험",desc:"과학 원리를 직접 실험하고 관찰한 활동을 소개합니다. 축제에서는 재미있는 과학 체험을 준비하고 있어요.",detail:"올해 진행한 실험과 탐구 주제, 활동 사진을 여기에 추가해 보세요."},
+{id:2,name:"미술 동아리",category:"예술 · 디자인",desc:"학생들의 개성과 아이디어를 그림과 디자인으로 표현합니다.",detail:"작품 전시와 제작 과정, 참여 방법을 소개할 수 있습니다."},
+{id:3,name:"프로그래밍 동아리",category:"코딩 · 메이킹",desc:"코드로 아이디어를 현실로 만드는 동아리입니다.",detail:"팀별 프로그램은 아래 작품 전시에서 확인해 보세요."}
+],projects:[
+{id:1,team:"예시 팀",title:"나만의 첫 번째 프로그램",desc:"프로그램이 어떤 문제를 해결하는지, 어떻게 사용하는지 설명해 주세요.",fileName:"",data:"",type:""}
+],schedule:[
+{id:1,time:"09:00",title:"축제 시작",desc:"개회 및 축제 안내"},
+{id:2,time:"10:00",title:"동아리 부스 운영",desc:"각 동아리 체험 및 작품 관람"},
+{id:3,time:"13:00",title:"공연 및 이벤트",desc:"학생들이 준비한 무대와 행사"}
+]};
+let state=load(),admin=false,editing=null,kind="";
+function load(){try{return JSON.parse(localStorage.getItem("hwagokFestival"))||structuredClone(starter)}catch(e){return structuredClone(starter)}}
+function persist(){localStorage.setItem("hwagokFestival",JSON.stringify(state));render()}
+function esc(s=""){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function render(){
+ document.getElementById("clubCount").textContent=state.clubs.length;
+ document.getElementById("projectCount").textContent=state.projects.length;
+ document.getElementById("clubList").innerHTML=state.clubs.map(c=>`<article class="card"><span class="tag">${esc(c.category)}</span><h3>${esc(c.name)}</h3><p>${esc(c.desc)}</p><p style="margin-top:10px">${esc(c.detail)}</p>${admin?`<div class="meta"><button class="btn small" onclick="editItem('club',${c.id})">수정</button> <button class="btn small ghost" onclick="removeItem('club',${c.id})">삭제</button></div>`:""}</article>`).join("")||'<div class="empty">아직 등록된 동아리 활동이 없습니다.</div>';
+ document.getElementById("projectList").innerHTML=state.projects.map(p=>`<article class="card project">${p.data?(p.type.startsWith("image/")?`<img src="${p.data}" alt="작품 이미지">`:p.type.startsWith("video/")?`<video src="${p.data}" controls></video>`:`<div class="inside">📎 ${esc(p.fileName)}</div>`):""}<div class="inside"><span class="tag">${esc(p.team)}</span><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p>${p.fileName?`<div class="meta">첨부: ${esc(p.fileName)}</div>`:""}${admin?`<div class="meta"><button class="btn small" onclick="editItem('project',${p.id})">수정</button> <button class="btn small ghost" onclick="removeItem('project',${p.id})">삭제</button></div>`:""}</div></article>`).join("")||'<div class="empty">아직 등록된 작품이 없습니다.</div>';
+ document.getElementById("scheduleList").innerHTML=state.schedule.map(e=>`<div class="event"><time>${esc(e.time)}</time><div><b>${esc(e.title)}</b><p>${esc(e.desc)}</p></div>${admin?`<div class="event-actions"><button class="btn small" onclick="editItem('schedule',${e.id})">수정</button> <button class="btn small ghost" onclick="removeItem('schedule',${e.id})">삭제</button></div>`:""}</div>`).join("")||'<div class="empty">일정이 아직 등록되지 않았습니다.</div>';
+ document.querySelectorAll(".admin-only").forEach(x=>x.classList.toggle("hidden",!admin));
+ applyTextOverrides();
+ updateTextEditing();
+}
+function setAdmin(v){admin=v;if(!v){textEditMode=false;const b=document.getElementById("textEditBtn");if(b)b.textContent="글자 직접 수정"}document.getElementById("adminbar").classList.toggle("active",v);document.getElementById("adminBtn").textContent=v?"편집 중":"관리자 편집";render()}
+document.getElementById("adminBtn").onclick=()=>{if(admin){setAdmin(false);return}document.getElementById("loginModal").classList.add("open");document.getElementById("adminPassword").value="";setTimeout(()=>document.getElementById("adminPassword").focus(),0)};
+document.getElementById("cancelLogin").onclick=()=>document.getElementById("loginModal").classList.remove("open");
+document.getElementById("confirmLogin").onclick=()=>{const pw=document.getElementById("adminPassword").value;if(pw==="1024"){document.getElementById("loginModal").classList.remove("open");setAdmin(true)}else{alert("비밀번호가 올바르지 않습니다.");document.getElementById("adminPassword").select()}};
+document.getElementById("adminPassword").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("confirmLogin").click()});
+
+let textEditMode=false;
+const textOverridesKey="hwagokFestivalTextOverrides";
+function elementPath(el){
+ const parts=[];
+ while(el && el!==document.body){
+  const parent=el.parentElement;
+  if(!parent)break;
+  parts.unshift(Array.prototype.indexOf.call(parent.children,el));
+  el=parent;
+ }
+ return parts.join(".");
+}
+function getByElementPath(path){
+ let el=document.body;
+ for(const index of path.split(".")){el=el.children[Number(index)];if(!el)return null}
+ return el;
+}
+function applyTextOverrides(){
+ let saved={};try{saved=JSON.parse(localStorage.getItem(textOverridesKey)||"{}")}catch(e){}
+ Object.entries(saved).forEach(([path,value])=>{const el=getByElementPath(path);if(el && el.childNodes.length===1 && el.firstChild.nodeType===3)el.textContent=value});
+}
+function updateTextEditing(){
+ document.body.classList.toggle("text-editing",admin&&textEditMode);
+ document.querySelectorAll("body *").forEach(el=>{
+  if(["SCRIPT","STYLE","INPUT","TEXTAREA","SELECT","OPTION"].includes(el.tagName))return;
+  const isTextLeaf=el.childNodes.length===1 && el.firstChild.nodeType===3 && el.textContent.trim().length>0;
+  if(isTextLeaf){el.contentEditable=admin&&textEditMode?"true":"false";el.spellcheck=false;}
+  else if(el.hasAttribute("contenteditable"))el.removeAttribute("contenteditable");
+ });
+}
+document.getElementById("textEditBtn").onclick=()=>{
+ textEditMode=!textEditMode;
+ document.getElementById("textEditBtn").textContent=textEditMode?"글자 수정 끝내기":"글자 직접 수정";
+ updateTextEditing();
+ if(textEditMode)alert("점선 테두리가 생긴 글자를 클릭해 바로 수정하세요. 수정한 글자는 자동 저장됩니다. 동아리·작품·일정 내용은 각 항목의 수정 버튼으로 편집할 수 있습니다.");
+};
+document.addEventListener("input",e=>{
+ if(!admin||!textEditMode)return;
+ const el=e.target;
+ if(!el.isContentEditable)return;
+ let saved={};try{saved=JSON.parse(localStorage.getItem(textOverridesKey)||"{}")}catch(err){}
+ saved[elementPath(el)]=el.textContent;
+ localStorage.setItem(textOverridesKey,JSON.stringify(saved));
+});
+
+
+const gradioStorageKey="hwagokGradioEmbedUrl";
+function setGradioEmbed(url){
+ const frame=document.getElementById("gradioFrame");
+ const placeholder=document.getElementById("gradioPlaceholder");
+ const clean=(url||"").trim();
+ if(!clean){frame.removeAttribute("src");frame.style.display="none";placeholder.style.display="block";return}
+ frame.src=clean;
+ frame.style.display="block";
+ placeholder.style.display="none";
+}
+function openGradioSettings(){
+ document.getElementById("gradioUrlInput").value=localStorage.getItem(gradioStorageKey)||"";
+ document.getElementById("gradioSettingsModal").classList.add("open");
+}
+document.getElementById("gradioSettingsBtn").onclick=openGradioSettings;
+document.getElementById("cancelGradioSettings").onclick=()=>document.getElementById("gradioSettingsModal").classList.remove("open");
+document.getElementById("saveGradioSettings").onclick=()=>{
+ const value=document.getElementById("gradioUrlInput").value.trim();
+ if(value){
+  try{const u=new URL(value);if(u.protocol!=="https:")throw Error();}
+  catch(e){alert("https://로 시작하는 올바른 Gradio 주소를 입력해 주세요.");return}
+  localStorage.setItem(gradioStorageKey,value);
+ }else localStorage.removeItem(gradioStorageKey);
+ setGradioEmbed(value);
+ document.getElementById("gradioSettingsModal").classList.remove("open");
+};
+document.getElementById("removeGradioSettings").onclick=()=>{
+ localStorage.removeItem(gradioStorageKey);
+ document.getElementById("gradioUrlInput").value="";
+ setGradioEmbed("");
+ document.getElementById("gradioSettingsModal").classList.remove("open");
+};
+
+document.getElementById("exitAdmin").onclick=()=>setAdmin(false);
+function fields(type,item){if(type==="club")return `<div class="field"><label>동아리 이름</label><input name="name" required value="${esc(item.name||"")}"></div><div class="field"><label>분야 / 분류</label><input name="category" value="${esc(item.category||"")}"></div><div class="field"><label>활동 소개</label><textarea name="desc" required>${esc(item.desc||"")}</textarea></div><div class="field"><label>자세한 활동 내용</label><textarea name="detail">${esc(item.detail||"")}</textarea></div>`;
+if(type==="project")return `<div class="field"><label>팀 이름</label><input name="team" required value="${esc(item.team||"")}"></div><div class="field"><label>작품 / 프로그램 이름</label><input name="title" required value="${esc(item.title||"")}"></div><div class="field"><label>작품 설명 및 사용 방법</label><textarea name="desc" required placeholder="무엇을 하는 프로그램인가요? 어떻게 사용하나요?">${esc(item.desc||"")}</textarea></div><div class="field"><label>작품 파일 또는 이미지·영상 첨부 (선택)</label><input type="file" name="upload" accept="image/*,video/*,.pdf,.zip,.html,.txt"><div class="hint">이미지·영상은 페이지에 미리보기로 표시됩니다. PDF·ZIP·프로그램 파일은 파일명만 표시됩니다. 파일은 브라우저 저장공간 한도에 영향을 받을 수 있습니다.</div>${item.fileName?`<div class="hint">현재 첨부: ${esc(item.fileName)} <label><input type="checkbox" name="clearFile"> 첨부 제거</label></div>`:""}</div>`;
+return `<div class="field"><label>시간</label><input name="time" required value="${esc(item.time||"")}"></div><div class="field"><label>행사 제목</label><input name="title" required value="${esc(item.title||"")}"></div><div class="field"><label>설명</label><textarea name="desc">${esc(item.desc||"")}</textarea></div>`}
+function openModal(type,item){kind=type;editing=item?item.id:null;document.getElementById("modalTitle").textContent=(item?"내용 수정":"새 항목 추가");document.getElementById("modalBody").innerHTML=fields(type,item||{});document.getElementById("modal").classList.add("open")}
+window.editItem=(type,id)=>openModal(type,state[type==="club"?"clubs":type==="project"?"projects":"schedule"].find(x=>x.id===id));
+window.removeItem=(type,id)=>{if(!confirm("정말 삭제할까요?"))return;const key=type==="club"?"clubs":type==="project"?"projects":"schedule";state[key]=state[key].filter(x=>x.id!==id);persist()};
+document.getElementById("addClub").onclick=()=>openModal("club");
+document.getElementById("addProject").onclick=()=>openModal("project");
+document.getElementById("editSchedule").onclick=()=>openModal("schedule");
+document.getElementById("cancelModal").onclick=()=>document.getElementById("modal").classList.remove("open");
+document.getElementById("saveModal").onclick=async()=>{
+ const form=document.querySelector("#modalBody");for(const el of form.querySelectorAll("[required]")){if(!el.value.trim()){el.focus();alert("필수 항목을 입력해 주세요.");return}}const fd=new FormData(form),obj=Object.fromEntries(fd.entries());
+ const key=kind==="club"?"clubs":kind==="project"?"projects":"schedule";let old=state[key].find(x=>x.id===editing)||{id:Date.now()};
+ if(kind==="project"){obj.fileName=old.fileName||"";obj.data=old.data||"";obj.type=old.type||"";if(form.elements.clearFile?.checked){obj.fileName="";obj.data="";obj.type=""}const file=form.elements.upload.files[0];if(file){obj.fileName=file.name;obj.type=file.type;if(file.size>3*1024*1024){alert("브라우저 저장 안정성을 위해 첨부 파일은 3MB 이하로 줄여 주세요.");return}obj.data=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file)})}}
+ const idx=state[key].findIndex(x=>x.id===editing);if(idx>=0)state[key][idx]={...old,...obj,id:old.id};else state[key].push({...obj,id:Date.now()});document.getElementById("modal").classList.remove("open");persist();
+};
+document.getElementById("exportBtn").onclick=()=>{const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="hwagok-festival-backup.json";a.click();URL.revokeObjectURL(a.href)};
+document.getElementById("importFile").onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!d.clubs||!d.projects||!d.schedule)throw Error();state=d;persist();alert("백업을 불러왔습니다.")}catch(err){alert("올바른 백업 파일이 아닙니다.")}e.target.value=""};
+render();
+setGradioEmbed(localStorage.getItem(gradioStorageKey)||"");
+</script>
+</body></html>
